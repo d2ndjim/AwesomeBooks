@@ -1,51 +1,33 @@
-const booksList = []
+const bookTitle = document.querySelector("#bookName");
+const bookAuthor = document.querySelector("#bookAuthor");
+const addBk = document.querySelector(".add-btn");
+const booksWrapper = document.querySelector(".books-list");
 
-function addNewBook(obj) {
-   booksList.push(obj)
-};
-
-function removeBook(obj) {
-  booksList = booksList.filter((element) => element.id !== obj.id)
-  
-}
-
+const booksList = [];
 
 function Book(book_name, book_author, id) {
-  this.title = book_name,
+  this.title = book_name, 
   this.author = book_author, 
-  this.id = id
-};
+  this.id = id;
+}
 
-function showBook(obj) {
-  const name = obj.bookTitle;
-  const author = obj.bookAuthor;
-  const booksWrapper = document.querySelector('.books-list');
-  const container = document.createElement('li');
-  const bookInfo = document.createElement('div');
-  const bookName = document.createElement('p');
-  const bookAuthor = document.createElement('p')
-  const removeBtn = document.createElement('button')
-  removeBtn.innerText = 'Remove'
-  bookName.innerText = `${name}`;
-  bookAuthor.innerText = `${author}`;
-  bookInfo.appendChild(bookName)
-  bookInfo.appendChild(author)
-  bookInfo.appendChild(removeBtn)
-  container.appendChild(bookInfo)
-  booksWrapper.appendChild(container)
-
-  removeBtn.addEventListener('click', removeBook)
+function showBook(title, author) {
+  booksWrapper.innerHTML += `
+  <div>
+    <p>${title}</p>
+    <p>${author}</p>
+    <button type='button'>Remove</button>
+  </div>
+  `
 }
 
 function addBooks() {
-  const title = document.querySelector('#bookName').value;
-  const author = document.querySelector('#bookAuthor').value;
-  const id = Date.now;
-  const obj = new Book(title, author, id);
-  booksList.addNewBook(obj);
-  showBook(obj);
-}
+  addBk.addEventListener('click', () => {
+    booksList.push(new Book(bookTitle.value, bookAuthor.value))
+    showBook(bookTitle.value, bookAuthor.value)
+    bookTitle.value = '';
+    bookAuthor.value = '';
+  });
+};
 
-const addButton = document.querySelector('.add-btn');
-
-addButton.addEventListener('click', addBooks);
+addBooks()
