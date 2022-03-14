@@ -3,48 +3,39 @@ const bookAuthor = document.querySelector("#bookAuthor");
 const addBk = document.querySelector(".add-btn");
 const booksWrapper = document.querySelector(".books-list");
 
-const booksList = [];
+let booksList = JSON.parse(localStorage.getItem("bookStorage")) || [];
 
-function Book(book_name, book_author, id) {
-  this.title = book_name, 
-  this.author = book_author, 
-  this.id = id;
+class Book {
+  constructor(title, author) {
+    this.title = title,
+    this.author = author,
+    this.id = title;
+  }
 }
 
-function showBook(title, author, id) {
+//local storage function
+
+function showBook(title, author) {
   booksWrapper.innerHTML += `
   <div>
-    <p>${title}</p>
+    <p>${title}</p>  
     <p>${author}</p>
-    <button type='button' class="removeBtn${id}">Remove</button>
-  </div>
-  `
-  const removeButton = document.querySelectorAll('.remove-btn');
-  removeButton.forEach((elem) => {
-    elem.addEventListener('click', () => {
-      booksList = booksList.filter(book => book.id !== elem.id);
-      booksWrapper.innerHTML = '';
-      booksList.forEach((_book) => {
-        showBook(bookTitle.value, bookAuthor.value);
-      });
-    });
-  });
+    <button type='button' class="remove-btn" id="${title}">Remove</button>
+  </div>`
+  ;
 
+  //remove button line 34
 }
-
 
 function addBooks() {
   addBk.addEventListener('click', () => {
-    booksList.push(new Book(bookTitle.value, bookAuthor.value, id = Date.now()))
+    booksList.push(new Book(bookTitle.value, bookAuthor.value))
     showBook(bookTitle.value, bookAuthor.value)
     bookTitle.value = '';
     bookAuthor.value = '';
   });
+  localStorage.setItem("bookStorage", JSON.stringify(booksList));
+  localstorage();
 };
 
-addBooks()
-
-function removeBtn (){
-  
- removeBtn.addEventListener('click', removeBtn);
-}
+addBooks();
