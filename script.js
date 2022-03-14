@@ -16,8 +16,25 @@ function Book(book_name, book_author, id) {
   this.id = id
 };
 
-function showBook() {
-  
+function showBook(obj) {
+  const name = obj.bookTitle;
+  const author = obj.bookAuthor;
+  const booksWrapper = document.querySelector('.books-list');
+  const container = document.createElement('li');
+  const bookInfo = document.createElement('div');
+  const bookName = document.createElement('p');
+  const bookAuthor = document.createElement('p')
+  const removeBtn = document.createElement('button')
+  removeBtn.innerText = 'Remove'
+  bookName.innerText = `${name}`;
+  bookAuthor.innerText = `${author}`;
+  bookInfo.appendChild(bookName)
+  bookInfo.appendChild(author)
+  bookInfo.appendChild(removeBtn)
+  container.appendChild(bookInfo)
+  booksWrapper.appendChild(container)
+
+  removeBtn.addEventListener('click', removeBook)
 }
 
 function addBooks() {
@@ -25,6 +42,10 @@ function addBooks() {
   const author = document.querySelector('#bookAuthor').value;
   const id = Date.now;
   const obj = new Book(title, author, id);
-  booksList.addNewBook(obj)
+  booksList.addNewBook(obj);
+  showBook(obj);
 }
 
+const addButton = document.querySelector('.add-btn');
+
+addButton.addEventListener('click', addBooks);
