@@ -3,8 +3,69 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 500px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-books {
-  margin-top: 10px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.books-list {
+  border: 2px solid #000;
+  padding: 15px;
+  width: 100%;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.list-container:nth-child(odd) {
+  background: rgba(114, 111, 111, 0.514);
+}
+
+.remove-btn {
+  border: 1px solid #000;
+  box-shadow: 2px 4px 4px 2px black;
+  background: #fff;
+  margin-right: 5px;
+}
+
+.line {
+  width: 10%;
+  color: #000;
+  margin-top: 20px;
+}
+
+#bookName,
+#bookAuthor {
+  border: 3px solid #000;
+  width: 100%;
+}
+
+.add-btn {
+  border: 1px solid #000;
+  box-shadow: 2px 4px 4px 2px black;
+  background: #fff;
+  align-self: flex-end;
 }

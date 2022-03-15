@@ -33,13 +33,13 @@ class BooksdataBase {
     if (title === ''|| author === '') {
       return '';
     }
-
+   
     booksWrapper.innerHTML += `
-    <div>
-      <p>${title}</p>  
-      <p>${author}</p>
+    <div class="list-container">
+      <p>"${title}" By ${author}</p>  
       <button type='button' class="remove-btn" id="${id}">Remove</button>
     </div>`;
+
     const removeBtn = document.querySelectorAll(".remove-btn");
     removeBtn.forEach((button) => {
       button.addEventListener("click", () => {
