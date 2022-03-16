@@ -6,9 +6,22 @@
     <title>Awesome Books</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100;1,200&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <nav class="nav-bar">
+        <h1>Awesome Books</h1>
+        <ul class="navItems">
+          <li id="list"><a>List</a></li> <hr class="vertical">
+          <li id="add-books"><a>Add new</a></li> <hr class="vertical">
+          <li id="contact-section"><a>Contact</a></li>
+        </ul>
+      </nav>
+      <p id="date"></p>
+    </header>
+  
     <section class="books-container">
       <div><h1 class="books-heading">All Awesome Books</h1></div>
       <div class="books-list">
@@ -22,6 +35,24 @@
       <input type="text" id="bookAuthor" placeholder="Author" required>
       <button class="add-btn" type="submit">Add</button>
     </form>
+
+    <section id="contact" class="contact-section hide">
+      <h2>Contact Information</h2>
+      <p>
+        If you have any questions or you just want to say "Hello", you can reach
+        out to us!
+      </p>
+      <ul class="contact-list">
+        <li>Our email: example@email.com</li>
+        <li>Our phone number: 00-111-2233</li>
+        <li>Our address: 1030 Code Drive, US</li>
+      </ul>
+    </section>
+
+    <footer id="copyright">
+      <p>Copyright - Awesome Books 2022</p>
+    </footer>
+
     <script src="script.js" ></script>
   </body>
 </html>
