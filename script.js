@@ -6,8 +6,8 @@ const bookAuthor = document.querySelector('#bookAuthor');
 const addBk = document.querySelector('.add-btn');
 const booksWrapper = document.querySelector('.books-list');
 
-const navItems = Array.from(document.querySelectorAll(".navItems")[0].children,);
-const header = document.querySelector(".books-heading");
+const navItems = Array.from(document.querySelectorAll('.navItems')[0].children);
+const header = document.querySelector('.books-heading');
 const newBook = document.querySelector('.add-books');
 const contact = document.querySelector('.contact-section');
 const webDate = document.querySelector('#date');
@@ -78,23 +78,23 @@ book.addBooks();
 
 function navigate(key) {
   switch (key) {
-    case "list":
-      booksWrapper.classList.remove("hide");
-      header.classList.remove("hide");
-      newBook.classList.add("hide");
-      contact.classList.add("hide");
+    case 'list':
+      booksWrapper.classList.remove('hide');
+      header.classList.remove('hide');
+      newBook.classList.add('hide');
+      contact.classList.add('hide');
       break;
-    case "add-books":
-      booksWrapper.classList.add("hide");
-      header.classList.add("hide");
-      newBook.classList.remove("hide");
-      contact.classList.add("hide");
+    case 'add-books':
+      booksWrapper.classList.add('hide');
+      header.classList.add('hide');
+      newBook.classList.remove('hide');
+      contact.classList.add('hide');
       break;
-    case "contact-section":
-      booksWrapper.classList.add("hide");
-      header.classList.add("hide");
-      newBook.classList.add("hide");
-      contact.classList.remove("hide");
+    case 'contact-section':
+      booksWrapper.classList.add('hide');
+      header.classList.add('hide');
+      newBook.classList.add('hide');
+      contact.classList.remove('hide');
       break;
     default:
       break;
@@ -102,25 +102,22 @@ function navigate(key) {
 }
 
 navItems.forEach((item) => {
-  item.addEventListener("click", (e) => {
+  item.addEventListener('click', (e) => {
     navigate(e.target.parentElement.id);
   });
 });
-
-
-
 
 function time() {
   const date = new Date();
   const locale = navigator.language;
   const options = {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    hour12: "false",
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: 'false',
   };
 
   webDate.textContent = `${date.toLocaleTimeString(locale, options)}`;

@@ -152,23 +152,14 @@ header {
   margin-left: 65px;
 }
 
-.vertical {
-  transform: rotate(90deg);
-  width: 25px;
-}
-
 #date {
-    position: fixed;
-    color: #ececec;
-    margin: 120px 20px 0 0;
-    font-size: 0.9rem;
-    right: 0%;
+  position: fixed;
+  color: #ececec;
+  margin: 120px 20px 0 0;
+  font-size: 0.9rem;
+  right: 0%;
 }
 
 .hide {
   display: none;
-}
-
-@media screen and (max-width: 547px) {
-  
 }
