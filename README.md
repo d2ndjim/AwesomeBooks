@@ -2,7 +2,7 @@
 
 > This is a team project being built in our second module of our curriculum at microverse. its a book application were you are able to add and remove book to a list
 
-Our goal here is to Build a book application with add and remove feature from scratch using JavaScripts. click [here]() to see deployed live version
+Our goal here is to Build a book application with add and remove feature from scratch using JavaScripts. click [here](https://d2ndjim.github.io/AwesomeBooks/) to see deployed live version
 
 ### Features implemented so far are:
 
