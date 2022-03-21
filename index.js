@@ -1,12 +1,9 @@
-// const webDate = document.querySelector('#date');
 import BooksdataBase from './modules/ShowBook.js';
-import Date from './modules/datetime.js';
-import navigate from "./modules/singlePageNav.js";
-
+import newNav from './modules/singlePageNav.js';
+import date from './modules/date.js'
 
 const book = new BooksdataBase();
 book.addBooks();
-navigate();
-Date();
-
+newNav();
+date();
 
