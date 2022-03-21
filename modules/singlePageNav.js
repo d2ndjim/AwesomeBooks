@@ -4,7 +4,7 @@ const newBook = document.querySelector('.add-books');
 const contact = document.querySelector('.contact-section');
 const booksWrapper = document.querySelector('.books-list');
 
-const navigate = key => {
+const navigate = (key) => {
   switch (key) {
     case 'list':
       booksWrapper.classList.remove('hide');
@@ -27,7 +27,7 @@ const navigate = key => {
     default:
       break;
   }
-}
+};
 
 const newNav = () => {
   navItems.forEach((item) => {
